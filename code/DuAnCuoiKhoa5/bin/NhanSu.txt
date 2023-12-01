@@ -1,0 +1,13 @@
+Quang # Vĩnh Phúc # 2003 # 2010 # 1 # true
+Hùng # Hà Nội # 2001 # 2013 # 2 # true
+Lan # Bắc Giang # 2000 # 2014 # 1 # true
+Hương # Bắc Ninh # 2002 # 2016 # 2 # true
+Bình # Nghệ An # 1999 # 2017 # 2 # true
+Hưng # Hà Tĩnh # 2015 # 5 # 6 # 8 # false
+Ngọc # Đà Nẵng # 2016 # 8 # 8 # 8 # false
+Tiến # Yên Bái # 2015 # 9 # 9 # 10 # false
+Minh # Bình Dương # 2000 # 2010 # 1 # true
+Thuận # Kiên Giang # 1999 # 2011 # 1 # true
+Nam # Hậu Giang # 2003 # 2019 # 1 # true
+Hiền # Sài Gòn # 2010 # 5.5 # 6 # 8 # false
+Anh # Huế # 2003 # 2020 # 1 # true

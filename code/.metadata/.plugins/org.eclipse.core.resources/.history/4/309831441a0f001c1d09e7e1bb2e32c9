@@ -1,0 +1,14 @@
+package QuanLyKhachSan;
+
+public class ThueTheoNgay extends QuanLyKhachSan {
+
+	public ThueTheoNgay() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public ThueTheoNgay(int maHD, String ngayHD, String tenKH, int maPhong, float donGia, float thanhTien) {
+		super(maHD, ngayHD, tenKH, maPhong, donGia, thanhTien);
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,20 @@
+
+public class GiaoVien extends ToanTruong {
+
+	public GiaoVien() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void nhap() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void xuat() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

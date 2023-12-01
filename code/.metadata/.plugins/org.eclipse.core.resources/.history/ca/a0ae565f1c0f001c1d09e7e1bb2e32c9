@@ -1,0 +1,26 @@
+package QuanLyKhachSan;
+
+import java.util.ArrayList;
+
+public class DanhSachHoaDon {
+
+	// 1 Attributes
+	private ArrayList<QuanLyKhachSan> QLKS;
+
+	// 2 Get,set
+	public ArrayList<QuanLyKhachSan> getQLKS() {
+		return QLKS;
+	}
+
+	public void setQLKS(ArrayList<QuanLyKhachSan> qLKS) {
+		QLKS = qLKS;
+	}
+
+	// 3 Constructor
+	public DanhSachHoaDon() {
+		QLKS = new ArrayList<QuanLyKhachSan>();
+	}
+	// 4 Input,output
+	// 5 Business method
+
+}

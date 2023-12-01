@@ -1,0 +1,30 @@
+package QuanLyKhachSan;
+
+public class ThueTheoGio extends QuanLyKhachSan {
+	
+	//1 Attributes
+	private float soGioThue;
+	
+	//2 Get,set
+	public float getSoGioThue() {
+		return soGioThue;
+	}
+
+	public void setSoGioThue(float soGioThue) {
+		this.soGioThue = soGioThue;
+	}
+
+	//3 Constructor
+	public ThueTheoGio() {
+		super();
+	}
+
+	public ThueTheoGio(int maHD, String ngayHD, String tenKH, int maPhong, float donGia, float thanhTien, float soGioThue) {
+		super(maHD, ngayHD, tenKH, maPhong, donGia, thanhTien);
+		this.soGioThue = soGioThue;
+	}
+	//4 Input, output
+	//5 Business method
+	
+
+}

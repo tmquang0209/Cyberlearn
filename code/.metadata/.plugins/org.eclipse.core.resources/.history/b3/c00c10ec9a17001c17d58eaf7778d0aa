@@ -1,0 +1,56 @@
+
+public class HocSinh extends ToanTruong {
+
+	// 1 Attributes
+	private float diemToan;
+	private float diemVan;
+	private float diemAnh;
+
+	// Get,set
+	public float getDiemToan() {
+		return diemToan;
+	}
+
+	public void setDiemToan(float diemToan) {
+		this.diemToan = diemToan;
+	}
+
+	public float getDiemVan() {
+		return diemVan;
+	}
+
+	public void setDiemVan(float diemVan) {
+		this.diemVan = diemVan;
+	}
+
+	public float getDiemAnh() {
+		return diemAnh;
+	}
+
+	public void setDiemAnh(float diemAnh) {
+		this.diemAnh = diemAnh;
+	}
+
+	// 3 Constructor
+	public HocSinh() {
+		super();
+	}
+
+	public HocSinh(String ten, String namSinh, String diaChi, float diemToan, float diemVan, float diemAnh) {
+		super(ten, namSinh, diaChi);
+		this.diemToan = diemToan;
+		this.diemVan = diemVan;
+		this.diemAnh = diemAnh;
+	}
+
+	// 4 Input,output
+
+	public void nhap() {
+
+	}
+
+	public void xuat() {
+		System.out.println("\t Điểm toán: " + diemToan + "\t Điểm văn: " + diemVan + "\t Điểm anh: " + diemAnh);
+	}
+
+}

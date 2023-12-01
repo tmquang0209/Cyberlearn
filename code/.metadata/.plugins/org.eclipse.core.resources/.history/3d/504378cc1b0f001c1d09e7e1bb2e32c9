@@ -1,0 +1,9 @@
+package QuanLyKhachSan;
+
+public class DanhSachHoaDon {
+
+	public DanhSachHoaDon() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

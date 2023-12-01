@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Bai6 {
+
+	public Bai6() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhập x: ");
+		int x = Integer.parseInt(sc.nextLine());
+		
+		System.out.print("Nhập n: ");
+		int n = Integer.parseInt(sc.nextLine());
+		
+		System.out.println(tinhTong(x,n));
+	}
+	
+	public static double tinhTong(double x,double n) {
+		if(n == 1) {
+			return x;
+		}
+		return (Math.pow(x, n) + tinhTong(x,n-1));
+	}
+
+}

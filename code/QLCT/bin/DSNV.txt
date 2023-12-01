@@ -1,0 +1,10 @@
+1 # Bưởi # 1990 # buoi@gmail.com # 09134 # true
+2 # Chuối # 1992 # chuoi@gmail.com # 09234 # false
+3 # Mận # 1998 # man@gmail.com # 09334 # false
+4 # Xoài # 1993 # xoai@gmail.com # 09134 # true
+5 # Hoa # 1994 # hoa@gmail.com # 09834 # false
+6 # Lan # 1992 # lan@gmail.com # 09834 # false
+7 # Hương # 1993 # huong@gmail.com # 09834 # true
+8 # Vịt # 1990 # vit@gmail.com # 09834 # false
+9 # Heo # 1994 # heo@gmail.com # 09834 # false
+10 # Gà # 1995 # ga@gmail.com # 09834 # false

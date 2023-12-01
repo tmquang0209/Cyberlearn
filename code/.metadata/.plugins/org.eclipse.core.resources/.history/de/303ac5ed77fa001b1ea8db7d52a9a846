@@ -1,0 +1,162 @@
+import java.util.Scanner;
+
+public class XuLy {
+	static final int GRAB_CAR_1KM = 8000;
+	static final int GRAB_SUV_1KM = 10000;
+	static final int GRAB_BLACK_1KM = 10000;
+
+	static final int GRAB_CAR_1_TO_19KM = 7500;
+	static final int GRAB_SUV_1_TO_19KM = 8500;
+	static final int GRAB_BLACK_1_TO_19KM = 9500;
+
+	static final int GRAB_CAR_UPPER_19KM = 7000;
+	static final int GRAB_SUV_UPPER_19KM = 8000;
+	static final int GRAB_BLACK_UPPER_19KM = 9000;
+
+	static final int GRAB_CAR_WAITING = 2000;
+	static final int GRAB_SUV_WAITING = 3000;
+	static final int GRAB_BLACK_WAITING = 3500;
+
+	public XuLy() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static float chooseGrab(int loaiGrab, float km) {
+		float payment = 0;
+		if (loaiGrab == 1) {
+			payment = chooseGrabCar(km);
+		} else if (loaiGrab == 2) {
+			payment = chooseGrabSUV(km);
+		} else {
+			payment = chooseGrabBlack(km);
+		}
+		return payment;
+	}
+
+//tính tiền chờ
+	public static float tinhTienCho(int loaiGrab, float thoiGianCho) {
+		float tienCho = 0;
+		if (thoiGianCho >= 3) {
+			float soLan = Math.round(thoiGianCho / 3);
+			if (loaiGrab == 1) {
+				tienCho = soLan * GRAB_CAR_WAITING;
+			} else if (loaiGrab == 2) {
+				tienCho = soLan * GRAB_SUV_WAITING;
+			} else {
+				tienCho = soLan * GRAB_BLACK_WAITING;
+			}
+		}
+		return tienCho;
+	}
+
+	// choose grab car
+	public static float chooseGrabCar(float km) {
+		float payment = 0;
+		float tienTra = 0;
+		if (km <= 1) {
+			tienTra = GRAB_CAR_1KM;
+		} else if (km < 19) {
+			tienTra = GRAB_CAR_1KM + (km - 1) * GRAB_CAR_1_TO_19KM;
+		} else {
+			tienTra = GRAB_CAR_1KM + 18 * GRAB_CAR_1_TO_19KM + (km - 19) * GRAB_CAR_UPPER_19KM;
+		}
+		return tienTra;
+	}
+
+	public static float chooseGrabSUV(float km) {
+		float payment = 0;
+		if (km <= 1) {
+			payment = km * GRAB_SUV_1KM;
+		} else if (km < 19) {
+			payment = GRAB_SUV_1KM + (km - 1) * GRAB_SUV_1_TO_19KM;
+		} else {
+			payment = GRAB_SUV_1KM + 18 * GRAB_SUV_1_TO_19KM + (km - 19) * GRAB_SUV_UPPER_19KM;
+		}
+
+		return payment;
+	}
+
+	public static float chooseGrabBlack(float km) {
+		float payment = 0;
+		if (km <= 1) {
+			payment = km * GRAB_BLACK_1KM;
+		} else if (km < 19) {
+			payment = GRAB_BLACK_1KM + (km - 1) * GRAB_BLACK_1_TO_19KM;
+		} else {
+			payment = GRAB_BLACK_1KM + 18 * GRAB_BLACK_1_TO_19KM + (km - 19) * GRAB_BLACK_UPPER_19KM;
+		}
+
+		return payment;
+	}
+
+	public static void chonLoaiGrab() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhập loại Grab: ");
+		System.out.println("1: Grab car \t 2: Grab SUV \t 3: Grab Black");
+		int type = Integer.parseInt(sc.nextLine());
+
+		System.out.print("Vui lòng nhập số km: ");
+		float km = Float.parseFloat(sc.nextLine());
+
+		System.out.print("Vui lòng nhập số phút chờ: ");
+		float minute = Float.parseFloat(sc.nextLine());
+
+		float ketQua = chooseGrab(type, km) + tinhTienCho(type, minute);
+		System.out.println(ketQua);
+	}
+
+	public static void main(String[] args) {
+		chonLoaiGrab();
+	}
+
+	// in dòng km1
+	public static void inDongKMDauTien(int loaiGrab, float km) {
+		float donGia;
+		if (loaiGrab == 1) {
+			donGia = GRAB_CAR_1KM;
+		} else if (loaiGrab == 2) {
+			donGia = GRAB_SUV_1KM;
+		} else {
+			donGia = GRAB_BLACK_1KM;
+		}
+		if (km < 1) {
+			System.out.println("KM ĐẦU TIÊN \t\t" + km + "\t\t" + donGia + "\t\t" + donGia);
+		} else {
+			System.out.println("KM ĐẦU TIÊN \t\t 1 \t\t" + donGia + "\t\t" + donGia);
+		}
+	}
+
+	public static void inDong1KmDen19Km(int loaiGrab, float km) {
+		float donGia;
+		if (loaiGrab == 1) {
+			donGia = GRAB_CAR_1_TO_19KM;
+		} else if (loaiGrab == 2) {
+			donGia = GRAB_SUV_1_TO_19KM;
+		} else {
+			donGia = GRAB_BLACK_1_TO_19KM;
+		}
+
+		inDongKMDauTien(loaiGrab, km);
+
+		if (km < 19) {
+			System.out.println("Từ 1 đến " + km + "\t\t" + (km - 1) + "\t\t" + donGia + "\t\t" + (donGia * (km - 1)));
+		} else {
+			System.out.println("Từ 1 đến " + km + "\t\t 19 \t\t" + donGia + "\t\t" + (donGia * 18));
+		}
+	}
+
+	public static void inDongKm19TroLen(int loaiGrab, float km) {
+		float donGia;
+		if (loaiGrab == 1) {
+			donGia = GRAB_CAR_UPPER_19KM;
+		} else if (loaiGrab == 2) {
+			donGia = GRAB_SUV_UPPER_19KM;
+		} else {
+			donGia = GRAB_BLACK_UPPER_19KM;
+		}
+		inDongKMDauTien(loaiGrab, km);
+		inDong1KmDen19Km(loaiGrab, km);
+		System.out.println("Từ 19 đến " + km + "\t\t" + (km-19) + "\t\t" + donGia + "\t\t" + (km - 19) * donGia);
+	}
+
+}

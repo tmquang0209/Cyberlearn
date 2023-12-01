@@ -1,0 +1,23 @@
+
+public class XuLy {
+
+	public XuLy() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		TruongHoc truongHoc = new TruongHoc();
+		truongHoc.taoDuLieu();
+		truongHoc.xuatToanTruong();
+//		truongHoc.tinhThamNienGV();
+//		truongHoc.xuatGVThamNienCaoNhat();
+//		truongHoc.timGVTMYeuCau();
+//		truongHoc.xuatDiemTBHS();
+//		truongHoc.xuatDTBCaoNhat();
+//		truongHoc.xuatHSCoDTBCaoNhat();
+		
+		//truongHoc.sapXepHSTheoDiem();
+truongHoc.xuatMang();
+	}
+
+}

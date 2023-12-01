@@ -1,0 +1,35 @@
+
+/*
+ * Tên chương trình: tổng chữ số chẵn
+ * Ngày: 28/08/2021
+ */
+import java.util.Scanner;
+
+public class Bai14 {
+
+	public Bai14() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n;
+		do {
+			System.out.print("Nhập n > 0: ");
+			n = Integer.parseInt(sc.nextLine());
+		} while (n <= 0);
+
+		System.out.println(tongChuSoChan(n, 0));
+
+	}
+
+	public static int tongChuSoChan(int n, int tong) {
+		if (n == 0)
+			return tong;
+		else if ((n % 10) % 2 == 0)
+			return tongChuSoChan(n / 10, tong + n % 10);
+		else
+			return tongChuSoChan(n / 10, tong);
+	}
+
+}

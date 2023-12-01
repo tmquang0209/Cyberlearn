@@ -1,0 +1,30 @@
+package QuanLyKhachSan;
+
+public class ThueTheoNgay extends QuanLyKhachSan {
+
+	// 1 Attributes
+	protected float soNgayThue;
+
+	// 2 Get,set
+	public float getSoNgayThue() {
+		return soNgayThue;
+	}
+
+	public void setSoNgayThue(float soNgayThue) {
+		this.soNgayThue = soNgayThue;
+	}
+
+	// 3 Constructor
+	public ThueTheoNgay() {
+		super();
+	}
+
+	public ThueTheoNgay(int maHD, String ngayHD, String tenKH, int maPhong, float donGia, float thanhTien,
+			float soNgayThue) {
+		super(maHD, ngayHD, tenKH, maPhong, donGia, thanhTien);
+		this.soNgayThue = soNgayThue;
+	}
+	// 4 Input,output
+	// 5 Business method
+
+}

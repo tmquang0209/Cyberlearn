@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class XuLy {
+
+	public XuLy() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		doMenu();
+	}
+
+	private static void printMenu() {
+		System.out.println("***** Menu *****");
+		System.out.println("1. Tính thâm niên GV");
+		System.out.println("2. Tìm GV Có thâm niên cao nhất");
+		System.out.println("3. GV có thâm niên > 5 năm và thuộc ban TN");
+		System.out.println("4. Tính ĐTB HS");
+		System.out.println("5. Điểm TB cao nhất");
+		System.out.println("6. HS có ĐTB cao nhất");
+		System.out.println("7. Xếp loại HS");
+		System.out.println("8. Sắp xếp DTB giảm dần");
+		System.out.println("9. Sắp xếp tên");
+		System.out.println("10. Xuất danh sách toàn trường");
+		System.out.println("==================");
+	}
+
+	public static void doMenu() {
+		Scanner scan = new Scanner(System.in);
+		TruongHoc truongHoc = new TruongHoc();
+		truongHoc.taoDuLieu();
+		boolean flag = true;
+		do {
+			printMenu();
+			System.out.print(">>");
+			int chon = Integer.parseInt(scan.nextLine());
+			switch (chon) {
+			case 0:
+				flag = false;
+				break;
+			case 1:
+				truongHoc.tinhThamNienGV();
+				break;
+			case 2:
+				truongHoc.xuatGVThamNienCaoNhat();
+				break;
+			case 3:
+				truongHoc.timGVTMYeuCau();
+				break;
+			case 4:
+				truongHoc.xuatDiemTBHS();
+				break;
+			case 5:
+				truongHoc.xuatDTBCaoNhat();
+				break;
+			case 6:
+				truongHoc.xuatHSCoDTBCaoNhat();
+				break;
+			case 7:
+				truongHoc.xuatXLHS();
+				break;
+			case 8:
+				truongHoc.sapXepHSTheoDiem();
+				break;
+			case 9:
+				truongHoc.sapXepTheoTen();
+				break;
+			case 10:
+				truongHoc.xuatToanTruong();
+				break;
+			default:
+				System.out.println("Chon tu 0->10");
+			}
+		} while (flag);
+	}
+
+}

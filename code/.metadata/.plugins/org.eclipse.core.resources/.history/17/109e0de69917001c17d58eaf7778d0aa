@@ -1,0 +1,13 @@
+
+public class GiaoVien extends ToanTruong {
+
+	public GiaoVien() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public GiaoVien(String hoTen, String namSinh, String diaChi) {
+		super(hoTen, namSinh, diaChi);
+		// TODO Auto-generated constructor stub
+	}
+
+}

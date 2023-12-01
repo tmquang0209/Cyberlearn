@@ -1,0 +1,67 @@
+package QuanLyKhachSan;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class DanhSachHoaDon {
+
+	// 1 Attributes
+	private ArrayList<QuanLyKhachSan> QLKS;
+
+	// 2 Get,set
+	public ArrayList<QuanLyKhachSan> getQLKS() {
+		return QLKS;
+	}
+
+	public void setQLKS(ArrayList<QuanLyKhachSan> qLKS) {
+		QLKS = qLKS;
+	}
+
+	// 3 Constructor
+	public DanhSachHoaDon() {
+		QLKS = new ArrayList<QuanLyKhachSan>();
+	}
+
+	// 4 Input,output
+	public void nhap(Scanner scan) {
+		boolean flag = true;
+		QuanLyKhachSan quanLy;
+		do {
+			System.out.println("1. Thuê theo giờ");
+			System.out.println("2. Thuê theo ngày");
+			System.out.println("0. Thoát");
+			System.out.print("Nhập: ");
+			int chon = Integer.parseInt(scan.nextLine());
+
+			switch (chon) {
+			case 0:
+				flag = false;
+				break;
+			case 1:
+				quanLy = new ThueTheoGio();
+				quanLy.nhap(scan);
+				QLKS.add(quanLy);
+				break;
+			case 2:
+				quanLy = new ThueTheoNgay();
+				quanLy.nhap(scan);
+				QLKS.add(quanLy);
+				break;
+			}
+		} while (flag);
+	}
+
+	public void xuat() {
+		for (QuanLyKhachSan ql : QLKS) {
+			ql.xuat();
+		}
+	}
+	
+	// 5 Business method
+	public void tinhTien() {
+		for(QuanLyKhachSan ql : QLKS) {
+			ql.tinhTien();
+		}
+	}
+	
+}

@@ -1,0 +1,104 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class DSNhanSu {
+	// 1 Attributes
+	private ArrayList<NhanSu> listNhanSu;
+
+	// 2 Get,set
+	public ArrayList<NhanSu> getListNhanSu() {
+		return listNhanSu;
+	}
+
+	public void setListNhanSu(ArrayList<NhanSu> listNhanSu) {
+		this.listNhanSu = listNhanSu;
+	}
+
+	// 3 Constructor
+	public DSNhanSu() {
+		this.listNhanSu = new ArrayList<NhanSu>();
+
+	}
+
+	// 4 Input,output
+	public void printMenu() {
+		System.out.println("1. Nhập NV Thường");
+		System.out.println("2. Nhập Trưởng phòng");
+		System.out.println("3. Nhập Giám đốc");
+		System.out.println("0. Thoát");
+	}
+
+	public ArrayList<NhanVienThuong> nhap(Scanner scan) {
+		boolean flag = true;
+		ArrayList<NhanVienThuong> listNhanVienThuongMoi = new ArrayList<NhanVienThuong>();
+		NhanSu nhanSu = null;
+		do {
+			printMenu();
+			System.out.print("Chọn >");
+			int chon = Integer.parseInt(scan.nextLine());
+
+			switch (chon) {
+			case 0:
+				flag = false;
+				break;
+			case 1:
+				nhanSu = new NhanVienThuong();
+				nhanSu.nhap(scan);
+				nhanSu.tinhLuong();
+				them(nhanSu);
+				listNhanVienThuongMoi.add((NhanVienThuong) nhanSu);
+				break;
+			case 2:
+				nhanSu = new TruongPhong();
+				nhanSu.nhap(scan);
+				nhanSu.tinhLuong();
+				them(nhanSu);
+				break;
+			case 3:
+				nhanSu = new GiamDoc();
+				nhanSu.nhap(scan);
+				nhanSu.tinhLuong();
+				them(nhanSu);
+				break;
+			default:
+				System.out.println("Nhap 0,1,2,3");
+			}
+		} while (flag);
+		return listNhanVienThuongMoi;
+	}
+
+	public void them(NhanSu ns) {
+		this.listNhanSu.add(ns);
+	}
+
+	public void xuat() {
+		for (NhanSu ns : this.listNhanSu) {
+			ns.xuat();
+		}
+	}
+
+	// 5 Business method
+	public void tinhLuong() {
+		for (NhanSu ns : this.listNhanSu) {
+			ns.tinhLuong();
+		}
+	}
+
+	public boolean timNSuTheoMa(int ma) {
+		for (NhanSu ns : listNhanSu) {
+			if (ns.getMaSo() == ma)
+				return true;
+		}
+		return false;
+	}
+	
+	public float getCoPhanGiamDoc() {
+		for(NhanSu ns : listNhanSu) {
+			if(ns instanceof GiamDoc) {
+				return ((GiamDoc) ns).getCoPhan();
+			}
+		}
+		return 0;
+	}
+
+}

@@ -1,0 +1,100 @@
+package QuanLyKhachSan;
+
+import java.util.Scanner;
+
+public class QuanLyKhachSan {
+
+	// 1 Attributes
+	/*
+	 * + maHD : int + ngayHD : String + tenKH : String + maPhong : int + donGia :
+	 * float + thanhTien : float
+	 */
+	protected int maHD;
+	protected String ngayHD;
+	protected String tenKH;
+	protected int maPhong;
+	protected float donGia;
+	protected float thanhTien;
+
+	// 2 Get,set
+	public int getMaHD() {
+		return maHD;
+	}
+
+	public void setMaHD(int maHD) {
+		this.maHD = maHD;
+	}
+
+	public String getNgayHD() {
+		return ngayHD;
+	}
+
+	public void setNgayHD(String ngayHD) {
+		this.ngayHD = ngayHD;
+	}
+
+	public String getTenKH() {
+		return tenKH;
+	}
+
+	public void setTenKH(String tenKH) {
+		this.tenKH = tenKH;
+	}
+
+	public int getMaPhong() {
+		return maPhong;
+	}
+
+	public void setMaPhong(int maPhong) {
+		this.maPhong = maPhong;
+	}
+
+	public float getDonGia() {
+		return donGia;
+	}
+
+	public void setDonGia(float donGia) {
+		this.donGia = donGia;
+	}
+
+	public float getThanhTien() {
+		return thanhTien;
+	}
+
+	// 3 Constructor
+	public QuanLyKhachSan() {
+
+	}
+
+	public QuanLyKhachSan(int maHD, String ngayHD, String tenKH, int maPhong, float donGia, float thanhTien) {
+		super();
+		this.maHD = maHD;
+		this.ngayHD = ngayHD;
+		this.tenKH = tenKH;
+		this.maPhong = maPhong;
+		this.donGia = donGia;
+		this.thanhTien = thanhTien;
+	}
+
+	// 4 Input,output
+	public void nhap(Scanner scan) {
+		System.out.print("Mã hóa đơn: ");
+		this.maHD = Integer.parseInt(scan.nextLine());
+		System.out.print("Ngày hóa đơn: ");
+		this.ngayHD = scan.nextLine();
+		System.out.print("Tên KH: ");
+		this.tenKH = scan.nextLine();
+		System.out.print("Mã phòng: ");
+		this.maPhong = Integer.parseInt(scan.nextLine());
+		System.out.print("Đơn giá: ");
+		this.donGia = Float.parseFloat(scan.nextLine());
+
+	}
+
+	public void xuat() {
+		System.out.print("Mã HĐ: " + maHD + "\t Ngày HĐ: " + ngayHD + "\t Tên KH: " + tenKH + "\t Mã phòng: " + maPhong
+				+ "\t Đơn giá: " + donGia);
+	}
+	// 5 Business method
+
+}

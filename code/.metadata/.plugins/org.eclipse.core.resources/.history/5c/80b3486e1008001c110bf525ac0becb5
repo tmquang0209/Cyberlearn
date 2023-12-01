@@ -1,0 +1,27 @@
+/*
+ * Tên chương trình: tính tổng số có dạng 1/n
+ * Ngày: 27/08/2021
+ */
+import java.util.Scanner;
+
+public class Bai3 {
+
+	public Bai3() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhập n: ");
+		int n = Integer.parseInt(sc.nextLine());
+		System.out.println(tinhTong(n));
+	}
+	
+	public static float tinhTong(float n) {
+		if(n == 1) {
+			return 1;
+		}
+		return 1/n + tinhTong(n-1);
+	}
+
+}

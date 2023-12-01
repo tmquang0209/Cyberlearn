@@ -1,0 +1,47 @@
+
+public class GiaoVien extends ToanTruong {
+
+	//1 Attributes
+	private String namBatDauDay;
+	private int chuyenMon;
+
+	
+	//2 Get,set
+	public String getNamBatDauDay() {
+		return namBatDauDay;
+	}
+
+	public void setNamBatDauDay(String namBatDauDay) {
+		this.namBatDauDay = namBatDauDay;
+	}
+
+	public int getChuyenMon() {
+		return chuyenMon;
+	}
+
+	public void setChuyenMon(int chuyenMon) {
+		this.chuyenMon = chuyenMon;
+	}
+	
+	
+	//3 Constructor
+	//4 Input,output
+	//5 Business method
+	
+	
+
+	public GiaoVien() {
+	
+	}
+
+	@Override
+	public void nhap() {
+	
+	}
+
+	@Override
+	public void xuat() {
+
+	}
+
+}
